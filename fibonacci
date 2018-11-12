@@ -1,0 +1,21 @@
+def fibo(n):
+    """
+    calculates fibonacci sequence using for loop
+    fibo = (n-1) + (n-2)
+    returns a list of fibonacci numbers (to the n-th number)
+    
+    args:
+    n -- number of the last element of fibo sequence we want to calculate
+    """
+    nums = []
+    for i in range(n):
+        if i == 0:
+            nums.append(0)
+        elif i == 1: 
+            nums.append(1)
+        else:
+            fib = nums[i-2] + nums[i-1]
+            nums.append(fib)
+    return nums
+
+print(fibo(10))
