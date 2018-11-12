@@ -4,7 +4,7 @@ def fibo(n):
     fibo = (n-1) + (n-2)
     returns a list of fibonacci numbers (to the n-th number)
     
-    args:
+    keyword args:
     n -- number of the last element of fibo sequence we want to calculate
     """
     nums = []
