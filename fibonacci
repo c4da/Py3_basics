@@ -30,4 +30,16 @@ def fiboRec(n):
     m = fiboRec(n-2) + fiboRec(n-1)
     return m
     
+memory = {0:0, 1:1, 2:1}
+def fiboMem(n):
+    """
+    calculates n-th fibonacci number using recursion and pseudo memory
+    """
+    if n not in memory:   
+        m = fiboMem(n-2) + fiboMem(n-1)
+        memory[n] = m
+    return memory[n]
+
+print(fibo(10))
 print(fiboRec(10))
+print(fiboMem(10))
