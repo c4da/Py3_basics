@@ -18,4 +18,16 @@ def fibo(n):
             nums.append(fib)
     return nums
 
-print(fibo(10))
+def fiboRec(n):
+    """
+    calculates n-th fibonacci number using recursion
+    """
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+        
+    m = fiboRec(n-2) + fiboRec(n-1)
+    return m
+    
+print(fiboRec(10))
