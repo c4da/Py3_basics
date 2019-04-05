@@ -1,0 +1,13 @@
+"""
+simple arg parser from cmd example
+"""
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-job", required = True, help = "enter anything")
+ap.add_argument("-job2", required = True, help = "enter anything")
+args = vars(ap.parse_args())
+print(args)
+
+print(args["job"])
+print(args.keys())
