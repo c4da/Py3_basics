@@ -1,0 +1,29 @@
+import threading
+import time
+
+counter = 0
+lock = threading.RLock()
+
+def alice():
+  global counter
+  i = 0
+  while i<100:
+    time.sleep(1)
+    print("Hello this is Alice")
+    i+=1
+    counter += 1 
+    counter -= 1
+    
+    
+def bob():
+  global counter
+  i = 0
+  while i<100:
+    time.sleep(0.8)
+    print("Hello this is Bob")
+    i+=1
+    counter += 1 
+    counter -= 1
+    
+ threading.Thread(target=alice).start()
+ threading.Thread(target=bob).start()
