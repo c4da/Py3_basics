@@ -1,0 +1,21 @@
+import asyncio
+import time
+
+counter = 0
+
+async def fun1():
+  global counter
+  while True:
+    counter += 1
+    counter -= 1
+    await asyncio.sleep(0)
+
+async def fun2():
+  global counter
+  while True:
+    counter += 1
+    counter -= 1
+    await asyncio.sleep(0)
+    
+asyncio.gather(fun1(), fun2())
+asyncio.get_event_loop().run_forever()
